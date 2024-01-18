@@ -1,6 +1,6 @@
-# 4448-mobileDEV
+# 4448-mobile- DEV
 ## Ahmed Krubally
-#### Repo: 3013 algorithms Repo
+#### Repo: 4448 mobile app development 
 #### Email: ahmedkrubally696@gmail.com
 
 #### Image:
