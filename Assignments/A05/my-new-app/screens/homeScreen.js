@@ -1,14 +1,13 @@
-import React, { useRef, useEffect, useMemo } from 'react';
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Animated, Easing, TouchableOpacity, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import BottomBar from '../../my-new-app/bottomMenu'; // Import the BottomBar component
 
 export default function HomePage({ navigation }) {
-  const spinValue = useMemo(() => new Animated.Value(0), []);
+  const spinValue = new Animated.Value(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const spin = () => {
       Animated.timing(
         spinValue,
@@ -25,7 +24,7 @@ export default function HomePage({ navigation }) {
     };
 
     spin(); // Initial call to start spinning
-  }, [spinValue]);
+  }, []);
 
   const spin = spinValue.interpolate({
     inputRange: [0, 1],
@@ -38,7 +37,11 @@ export default function HomePage({ navigation }) {
 
   const handleLogin = () => {
     navigation.navigate('Login');
-  }
+  };
+
+  const handleChat = () => {
+    navigation.navigate('Chat');
+  };
 
   return (
     <View style={styles.container}>
@@ -48,9 +51,9 @@ export default function HomePage({ navigation }) {
       />
 
       <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Ionicons name="home" size={32} color="black" />
-          <Text style={styles.buttonText}>Home</Text>
+        <TouchableOpacity style={styles.button} onPress={handleChat}>
+          <Ionicons name="chatbox" size={32} color="black" />
+          <Text style={styles.buttonText}>Chat</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={handleSignUp}>
