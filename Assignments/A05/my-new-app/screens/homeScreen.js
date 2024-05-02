@@ -43,6 +43,10 @@ export default function HomePage({ navigation }) {
     navigation.navigate('Chat');
   };
 
+  const handleImageUpload = () => {
+    navigation.navigate('ImageUpload'); // Navigate to the ImageUpload screen
+  };
+
   return (
     <View style={styles.container}>
       <Animated.Image
@@ -64,6 +68,11 @@ export default function HomePage({ navigation }) {
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Ionicons name="log-in" size={32} color="black" />
           <Text style={styles.buttonText}>Log In</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={handleImageUpload}>
+          <Ionicons name="image" size={32} color="black" />
+          <Text style={styles.buttonText}>Upload Image</Text>
         </TouchableOpacity>
       </View>
 
