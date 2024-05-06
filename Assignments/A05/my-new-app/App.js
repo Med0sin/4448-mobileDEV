@@ -5,6 +5,8 @@ import RegistrationScreen from './screens/RegistrationScreen';
 import LoginScreen from './screens/LogInScreen';
 import SearchScreen from './screens/SearchScreen';
 import MapScreen from './screens/mapScreen';
+import 'react-native-gesture-handler';
+
 
 const Stack = createStackNavigator();
 
